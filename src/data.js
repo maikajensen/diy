@@ -1,9 +1,9 @@
-import clampSoft from '/Users/maikalindkvistjensen/.gemini/antigravity/brain/110bf19a-24a5-43be-8403-cb4f72b4a9da/clamp_soft_1765493709354.png';
-import levelSoft from '/Users/maikalindkvistjensen/.gemini/antigravity/brain/110bf19a-24a5-43be-8403-cb4f72b4a9da/level_soft_1765493723854.png';
-import jigsawSoft from '/Users/maikalindkvistjensen/.gemini/antigravity/brain/110bf19a-24a5-43be-8403-cb4f72b4a9da/jigsaw_soft_1765493737860.png';
-import contourSoft from '/Users/maikalindkvistjensen/.gemini/antigravity/brain/110bf19a-24a5-43be-8403-cb4f72b4a9da/contour_soft_1765493753362.png';
-import drillGuideSoft from '/Users/maikalindkvistjensen/.gemini/antigravity/brain/110bf19a-24a5-43be-8403-cb4f72b4a9da/drillguide_soft_1765493767553.png';
-import drillSoft from '/Users/maikalindkvistjensen/.gemini/antigravity/brain/110bf19a-24a5-43be-8403-cb4f72b4a9da/drill_soft_1765493794349.png';
+import clampSoft from '/src/components/clamp_soft_1765493709354.png';
+import levelSoft from '/src/components/level_soft_1765493723854.png';
+import jigsawSoft from '/src/components/jigsaw_soft_1765493737860.png';
+import contourSoft from '/src/components/contour_soft_1765493753362.png';
+import drillGuideSoft from '/src/components/drillguide_soft_1765493767553.png';
+import drillSoft from '/src/components/drill_soft_1765493794349.png';
 // Note: drill_soft path will be updated after generation, using placeholder for now or if I can predict it. 
 // Actually, I can't predict the timestamp. I will use a placeholder and update it in a second step or just use the generated one if I can get the path from the previous turn? 
 // Wait, I am in the same turn. I cannot know the path of the drill image yet. 
