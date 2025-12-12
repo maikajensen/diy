@@ -1,65 +1,49 @@
-import clampSoft from '/src/components/clamp_soft_1765493709354.png';
-import levelSoft from '/src/components/level_soft_1765493723854.png';
-import jigsawSoft from '/src/components/jigsaw_soft_1765493737860.png';
-import contourSoft from '/src/components/contour_soft_1765493753362.png';
-import drillGuideSoft from '/src/components/drillguide_soft_1765493767553.png';
-import drillSoft from '/src/components/drill_soft_1765493794349.png';
-// Note: drill_soft path will be updated after generation, using placeholder for now or if I can predict it. 
-// Actually, I can't predict the timestamp. I will use a placeholder and update it in a second step or just use the generated one if I can get the path from the previous turn? 
-// Wait, I am in the same turn. I cannot know the path of the drill image yet. 
-// I will write the file with the 5 known images and a placeholder for the drill, then update it in the next turn.
-// OR I can just wait to write this file until I have the drill image path.
-// But I want to do things in parallel.
-// I will write it with a placeholder and update it next turn.
+import drillGuide from '/src/assets/tools/drill_guide.png';
+import handles from '/src/assets/tools/handles.png';
+import shims from '/src/assets/tools/shims.png';
+import speedSquare from '/src/assets/tools/speed_square.png';
+import forstnerBit from '/src/assets/tools/forstner_bit.png';
 
 export const products = [
     {
         id: 1,
-        name: "Vaterpas",
-        description: "For helt lige hylder.",
-        price: 149,
-        image: levelSoft,
-        category: "Måling"
+        name: "Boreskabelon til greb",
+        description: "Sikrer præcis boring af huller til greb.",
+        price: 249,
+        image: drillGuide,
+        category: "Boring"
     },
     {
         id: 2,
-        name: "Konturmåler",
-        description: "Kopier former øjeblikkeligt for perfekte snit.",
-        price: 199,
-        image: contourSoft,
-        category: "Måling"
+        name: "Møbelgreb",
+        description: "Elegante greb til dine skabe.",
+        price: 129,
+        image: handles,
+        category: "Tilbehør"
     },
     {
         id: 3,
-        name: "Skruetvinger",
-        description: "Et ekstra sæt hænder til limning.",
-        price: 129,
-        image: clampSoft,
-        category: "Klemmer"
+        name: "Knudsen Kiler",
+        description: "Til præcis opklodsning og nivellering.",
+        price: 99,
+        image: shims,
+        category: "Montering"
     },
     {
         id: 4,
-        name: "Boreguide",
-        description: "Bor grebshuller det helt rigtige sted.",
-        price: 249,
-        image: drillGuideSoft,
-        category: "Boring"
+        name: "Tømrervinkel",
+        description: "Uundværlig til opmærkning og vinkler.",
+        price: 149,
+        image: speedSquare,
+        category: "Måling"
     },
     {
         id: 5,
-        name: "Boremaskine",
-        description: "Kraftfuld boremaskine til alle opgaver.",
-        price: 499,
-        image: drillSoft,
+        name: "Hængselbor",
+        description: "Til boring af huller til hængsler.",
+        price: 199,
+        image: forstnerBit,
         category: "Boring"
-    },
-    {
-        id: 6,
-        name: "Stiksav",
-        description: "Til præcise udskæringer.",
-        price: 399,
-        image: jigsawSoft,
-        category: "Savning"
     }
 ];
 
@@ -75,7 +59,7 @@ export const projects = [
     {
         id: 2,
         title: "Byggevejledning - Hesteskoskab - Metod",
-        description: "Elegant skoopbevaring formet som en hestesko.",
+        description: "Et hestesko-skab er en genial løsning til små rum, hvor det kan være svært at finde plads til et regulært skab. Hestesko-skabe skaber små hyggelige kroge omkring sengen og en kæmpe wow-oplevelse for rummet som helhed.",
         image: "https://www.yaay.dk/cdn/shop/files/EB62E860-9BB2-416D-A8DA-E6B4C4D6976C2.jpg?v=1710973307",
         price: 395,
         tools: [1, 5, 6]
@@ -131,7 +115,7 @@ export const projects = [
     {
         id: 9,
         title: "Byggevejledning - Vaskeskab - Metod",
-        description: "Skjul vaskesøjlen med stil.",
+        description: "Skjul vaskemaskine, tørretumbler eller vaskesøjle med stil.",
         image: "https://www.yaay.dk/cdn/shop/files/IMG_3767_Original.jpg?v=1758720586",
         price: 395,
         tools: [1, 3, 5]

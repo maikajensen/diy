@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { projects, products } from '../data';
 import ProjectCard from '../components/ProjectCard';
-import { X, Check, ShoppingBag } from 'lucide-react';
+import { X, Check, ShoppingBag, Hammer } from 'lucide-react';
+import { useCart } from '../context/CartContext';
 
 const ShopByProject = () => {
     const [selectedProject, setSelectedProject] = useState(null);
+    const { addToCart } = useCart();
 
     const handleProjectClick = (project) => {
         setSelectedProject(project);
@@ -27,9 +30,17 @@ const ShopByProject = () => {
                         Byg smukke møbler selv
                     </h1>
                     <p className="text-lg text-pink-800/80 max-w-2xl mx-auto mb-8">
-                        Vi har samlet alt værktøjet du skal bruge til de mest populære IKEA hacks.
-                        Vælg dit projekt, og kom i gang med det samme.
+                        Vi har samlet alt det værktøj, du skal bruge til de mest populære IKEA-hacks. Vælg dit projekt, eller gå på opdagelse i vores værktøjsudvalg, og kom i gang med det samme.
                     </p>
+                    <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                        <a href="#projects" className="w-full sm:w-auto bg-pink-500 text-white px-8 py-3 rounded-xl font-bold hover:bg-pink-600 transition-colors shadow-lg shadow-pink-200">
+                            Se Projekter
+                        </a>
+                        <Link to="/tools" className="w-full sm:w-auto bg-white text-pink-600 border-2 border-pink-100 px-8 py-3 rounded-xl font-bold hover:bg-pink-50 hover:border-pink-200 transition-colors flex items-center justify-center gap-2">
+                            <Hammer className="w-5 h-5" />
+                            Se alt værktøj
+                        </Link>
+                    </div>
                 </div>
             </div>
 
@@ -108,7 +119,14 @@ const ShopByProject = () => {
                                         {getProjectTools(selectedProject.tools).reduce((sum, tool) => sum + tool.price, 0)} kr.
                                     </p>
                                 </div>
-                                <button className="w-full md:w-auto bg-pink-500 hover:bg-pink-600 text-white font-bold py-4 px-8 rounded-xl transition-colors shadow-lg shadow-pink-200 flex items-center justify-center gap-2">
+                                <button
+                                    onClick={() => {
+                                        const tools = getProjectTools(selectedProject.tools);
+                                        tools.forEach(tool => addToCart(tool));
+                                        closeBundle();
+                                    }}
+                                    className="w-full md:w-auto bg-pink-500 hover:bg-pink-600 text-white font-bold py-4 px-8 rounded-xl transition-colors shadow-lg shadow-pink-200 flex items-center justify-center gap-2"
+                                >
                                     <ShoppingBag className="w-5 h-5" />
                                     Læg hele pakken i kurv
                                 </button>
