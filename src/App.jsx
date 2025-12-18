@@ -4,7 +4,10 @@ import Layout from './components/Layout';
 import ShopByProject from './pages/ShopByProject';
 import AllTools from './pages/AllTools';
 import { useCart } from './context/CartContext';
+import Checkout from './pages/Checkout'; // Import Checkout
 import { Trash2 } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+
 
 function App() {
     return (
@@ -13,6 +16,7 @@ function App() {
                 <Route path="/" element={<ShopByProject />} />
                 <Route path="/tools" element={<AllTools />} />
                 <Route path="/cart" element={<CartPage />} />
+                <Route path="/checkout" element={<Checkout />} />
             </Routes>
         </Layout>
     );
@@ -20,6 +24,8 @@ function App() {
 
 const CartPage = () => {
     const { cartItems, removeFromCart, updateQuantity, getCartTotal } = useCart();
+    const navigate = useNavigate();
+
 
     if (cartItems.length === 0) {
         return (
@@ -78,7 +84,10 @@ const CartPage = () => {
                         <p className="text-sm text-gray-500">Samlet pris</p>
                         <p className="text-2xl font-serif font-bold text-pink-900">{getCartTotal()} kr.</p>
                     </div>
-                    <button className="w-full sm:w-auto bg-pink-500 text-white px-8 py-3 rounded-xl font-bold hover:bg-pink-600 transition-colors shadow-lg shadow-pink-200">
+                    <button
+                        onClick={() => navigate('/checkout')}
+                        className="w-full sm:w-auto bg-pink-500 text-white px-8 py-3 rounded-xl font-bold hover:bg-pink-600 transition-colors shadow-lg shadow-pink-200"
+                    >
                         Gå til kassen
                     </button>
                 </div>

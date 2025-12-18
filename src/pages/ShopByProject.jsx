@@ -103,9 +103,16 @@ const ShopByProject = () => {
                                             </div>
                                             <div className="flex items-center gap-4">
                                                 <span className="font-bold text-pink-700">{tool.price} kr.</span>
-                                                <div className="w-6 h-6 bg-pink-100 rounded-full flex items-center justify-center text-pink-600">
-                                                    <Check className="w-4 h-4" />
-                                                </div>
+                                                <button
+                                                    onClick={(e) => {
+                                                        e.stopPropagation();
+                                                        addToCart(tool);
+                                                    }}
+                                                    className="w-8 h-8 rounded-full bg-pink-100 hover:bg-pink-200 text-pink-600 flex items-center justify-center transition-colors"
+                                                    title="Læg i kurv"
+                                                >
+                                                    <span className="text-lg font-bold">+</span>
+                                                </button>
                                             </div>
                                         </div>
                                     ))}

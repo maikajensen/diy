@@ -23,7 +23,7 @@ const Layout = ({ children }) => {
                             <div className="bg-pink-100 p-2 rounded-full">
                                 <Hammer className="w-6 h-6 text-pink-500" />
                             </div>
-                            <span className="font-serif text-2xl font-bold text-pink-800 tracking-tight">The DIY Edit</span>
+                            <span className="font-serif text-2xl font-bold text-pink-800 tracking-tight">GDS værktøj</span>
                         </Link>
 
                         {/* Desktop Links */}
@@ -70,7 +70,7 @@ const Layout = ({ children }) => {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         <div>
-                            <h3 className="font-serif text-lg font-bold text-pink-800 mb-4">The DIY Edit</h3>
+                            <h3 className="font-serif text-lg font-bold text-pink-800 mb-4">GDS værktøj</h3>
                             <p className="text-pink-900/70 text-sm leading-relaxed">
                                 Gør det nemt at bygge smukke møbler selv. Vi samler værktøjet, så du kan fokusere på projektet.
                             </p>
@@ -87,12 +87,12 @@ const Layout = ({ children }) => {
                             <h4 className="font-bold text-pink-800 mb-4">Kontakt</h4>
                             <p className="text-sm text-pink-900/70">
                                 Har du spørgsmål? <br />
-                                Skriv til os på hej@thediyedit.dk
+                                Skriv til os på gdsvaerktoej@gmail.com
                             </p>
                         </div>
                     </div>
                     <div className="mt-8 pt-8 border-t border-pink-200 text-center text-xs text-pink-500">
-                        &copy; {new Date().getFullYear()} The DIY Edit. Alle rettigheder forbeholdes.
+                        &copy; {new Date().getFullYear()} GDS værktøj. Alle rettigheder forbeholdes.
                     </div>
                 </div>
             </footer>
